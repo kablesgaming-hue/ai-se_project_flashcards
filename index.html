@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flash Cards</title>
+
+    <link rel="stylesheet" href="./assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a href="#home" class="header__link">Flash Cards</a>
+      </h1>
+      <nav class="nav">
+        <ul class="nav__links">
+          <li>
+            <a href="#home" class="nav__link">My Decks</a>
+          </li>
+          <li>
+            <a href="#about" class="nav__link">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main-content">
+      <section class="decks" id="home">
+        <h2 class="decks__title">My Decks</h2>
+        <div class="wrapping-row">
+          <ul class="decks__list">
+            <template id="deck-template">
+              <li class="deck">
+                <a href="#" class="deck__link"></a>
+
+                <div class="deck__content">
+                  <h3 class="deck__title"></h3>
+
+                  <div class="deck__row">
+                    <p class="deck__count"></p>
+
+                    <button
+                      type="button"
+                      class="deck__delete-btn"
+                      aria-label="Delete this deck"
+                    ></button>
+                  </div>
+                </div>
+              </li>
+            </template>
+          </ul>
+
+          <button type="button" class="decks__new-deck-btn">+ New Deck</button>
+        </div>
+      </section>
+      <section class="carousel" id="carousel">
+        <h2 class="carousel__title">1 of 10 &middot; Basic HTML Tags</h2>
+
+        <div class="carousel__row">
+          <button
+            type="button"
+            class="carousel__btn carousel__btn_type_left carousel__btn_disabled"
+            aria-label="Previous card"
+          ></button>
+
+          <div class="carousel__card">
+            <p class="carousel__card-text">&lt;body&gt;&lt;/body&gt;</p>
+          </div>
+
+          <button
+            type="button"
+            class="carousel__btn carousel__btn_type_right"
+            aria-label="Next card"
+          ></button>
+        </div>
+
+        <button
+          type="button"
+          class="carousel__btn carousel__btn_type_flip"
+          aria-label="Flip card"
+        ></button>
+      </section>
+      <section class="not-found" id="not-found">
+        <h2>404</h2>
+        <p>Page not found</p>
+      </section>
+    </main>
+    <script type="module" src="./assets/js/index.js"></script>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2026 Kenneth Robinette</p>
+    </footer>
+  </body>
+</html>
