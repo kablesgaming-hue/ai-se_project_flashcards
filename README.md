@@ -34,3 +34,8 @@ My first project in TripleTen's AI-Assisted Software Engineering program. It inc
 
 \- GitHub
 
+## Deployed Site
+
+Check out my flashcard app here:
+
+https://kablesgaming-hue.github.io/ai-se_project_flashcards/
