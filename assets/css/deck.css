@@ -1,0 +1,74 @@
+.deck {
+  width: 325px;
+  height: 180px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 20px;
+}
+
+.deck_color_green {
+  background-color: #64d583;
+}
+
+.deck_color_blue {
+  background-color: #91a8f9;
+}
+
+.deck_color_pink {
+  background-color: #ee92d7;
+}
+
+.deck_color_purple {
+  background-color: #aa8ef0;
+}
+
+.deck_color_orange {
+  background-color: #ee955e;
+}
+
+.deck_color_yellow {
+  background-color: #f5d770;
+}
+
+.deck__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deck__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.deck__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deck__count {
+  margin: 0;
+  font-size: 16px;
+}
+
+.deck__delete-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../images/delete.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.deck__delete-btn:hover {
+  opacity: 1;
+}
