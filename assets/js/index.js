@@ -1,13 +1,18 @@
 import { decks, getDeckByID } from "./decks.js";
 import { hexToString } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
+import { renderDeckView } from "./deck-view.js";
+
+let currentDeck = null;
 
 const deckTemplateEl = document.querySelector("#deck-template");
 const deckListEl = document.querySelector(".gallery__list");
 const homeSection = document.querySelector("#home");
+const deckViewSection = document.querySelector("#deck-view");
 const notFoundSection = document.querySelector("#not-found");
 const carouselSection = document.querySelector("#carousel");
 const mainContentEl = document.querySelector(".page__main-content");
+const practiceBtn = document.querySelector(".gallery__practice-btn");
 
 function createDeckEl(item) {
   const deckEl = deckTemplateEl.content.cloneNode(true);
@@ -24,7 +29,7 @@ function createDeckEl(item) {
 
   const deckLinkEl = deckEl.querySelector(".card__link");
 
-  deckLinkEl.href = `#carousel/${item.id}`;
+  deckLinkEl.href = `#deck/${item.id}`;
 
   const deleteBtn = deckEl.querySelector(".card__delete-btn");
 
@@ -41,6 +46,7 @@ function renderDeckEl(item) {
 }
 function renderView() {
   homeSection.style.display = "none";
+  deckViewSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
 
@@ -50,16 +56,38 @@ function renderView() {
 
   if (hash === "#home" || hash === "") {
     homeSection.style.display = "block";
+    currentDeck = null;
+  } else if (hash.startsWith("#deck/")) {
+    const deckID = hash.split("/")[1];
+    const deck = getDeckByID(deckID);
+
+    if (!deck) {
+      notFoundSection.style.display = "flex";
+      currentDeck = null;
+      return;
+    }
+
+    currentDeck = deck;
+    deckViewSection.style.display = "block";
+    renderDeckView(deck);
   } else if (hash.startsWith("#carousel/")) {
     const deckID = hash.split("/")[1];
 
     const deck = getDeckByID(deckID);
 
+    if (!deck) {
+      notFoundSection.style.display = "flex";
+      currentDeck = null;
+      return;
+    }
+
+    currentDeck = deck;
     carouselSection.style.display = "flex";
     mainContentEl.classList.add("page__main-content_location_carousel");
 
     renderCarouselView(deck);
   } else {
+    currentDeck = null;
     notFoundSection.style.display = "flex";
   }
 }
@@ -69,3 +97,9 @@ decks.forEach(renderDeckEl);
 renderView();
 
 window.addEventListener("hashchange", renderView);
+
+practiceBtn.addEventListener("click", () => {
+  if (currentDeck) {
+    window.location.hash = `#carousel/${currentDeck.id}`;
+  }
+});
