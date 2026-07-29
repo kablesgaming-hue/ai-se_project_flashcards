@@ -35,30 +35,63 @@
       <section class="gallery" id="home">
         <h2 class="gallery__title">My Decks</h2>
         <div class="wrapping-row">
-          <ul class="gallery__list">
-            <template id="deck-template">
-              <li class="card">
-                <a href="#" class="card__link"></a>
-
-                <div class="card__content">
-                  <h3 class="card__title"></h3>
-
-                  <div class="card__row">
-                    <p class="card__count"></p>
-
-                    <button
-                      type="button"
-                      class="card__delete-btn"
-                      aria-label="Delete this deck"
-                    ></button>
-                  </div>
-                </div>
-              </li>
-            </template>
-          </ul>
+          <ul class="gallery__list"></ul>
 
           <button type="button" class="gallery__new-card-btn">
             + New Deck
+          </button>
+        </div>
+      </section>
+      <template id="deck-template">
+        <li class="card">
+          <a href="#" class="card__link"></a>
+
+          <div class="card__content">
+            <h3 class="card__title"></h3>
+
+            <div class="card__row">
+              <p class="card__count"></p>
+
+              <button
+                type="button"
+                class="card__delete-btn"
+                aria-label="Delete this deck"
+              ></button>
+            </div>
+          </div>
+        </li>
+      </template>
+      <template id="card-template">
+        <li class="card">
+          <h3 class="card__title"></h3>
+
+          <div class="card__row">
+            <button
+              type="button"
+              aria-label="Flip card"
+              class="card__flip-btn"
+            ></button>
+
+            <button
+              type="button"
+              aria-label="Delete card"
+              class="card__delete-btn"
+            ></button>
+          </div>
+        </li>
+      </template>
+      <section id="deck-view" class="gallery">
+        <div class="gallery__header">
+          <h2 class="gallery__title"></h2>
+
+          <button type="button" class="gallery__practice-btn">Practice</button>
+        </div>
+
+        <div class="wrapping-row">
+          <ul class="gallery__list wrapping-row__display-contents"></ul>
+
+          <button type="button" class="gallery__new-card-btn">
+            + New Card
           </button>
         </div>
       </section>
