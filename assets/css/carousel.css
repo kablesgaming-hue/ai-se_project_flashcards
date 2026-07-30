@@ -13,22 +13,25 @@
   color: rgba(26, 26, 26, 0.5);
 }
 
-.carousel__row {
-  display: flex;
+.carousel__grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 440px) auto;
+  grid-template-areas:
+    "left card right"
+    ". flip .";
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
 .carousel__card {
+  grid-area: card;
   width: 440px;
   height: 300px;
-
   padding: 20px;
   box-sizing: border-box;
-
   border-radius: 20px;
   background-color: #64d583;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,6 +94,7 @@
 }
 
 .carousel__btn_type_left {
+  grid-area: left;
   background-image: url("../images/left.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -98,6 +102,7 @@
 }
 
 .carousel__btn_type_right {
+  grid-area: right;
   background-image: url("../images/right.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -105,10 +110,48 @@
 }
 
 .carousel__btn_type_flip {
+  grid-area: flip;
+  justify-self: center;
   background-image: url("../images/flip.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
+}
 
-  margin-top: 24px;
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 100%;
+  }
+
+  .carousel__grid {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card card"
+      "left right"
+      "flip flip";
+    gap: 20px;
+  }
+
+  .carousel__card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 440 / 300;
+  }
+
+  .carousel__btn_type_left {
+    justify-self: start;
+  }
+
+  .carousel__btn_type_right {
+    justify-self: end;
+  }
+
+  .carousel__btn_type_flip {
+    justify-self: center;
+  }
+
+  .carousel__card-text {
+    font-size: 24px;
+  }
 }

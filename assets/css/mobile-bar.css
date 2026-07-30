@@ -15,23 +15,24 @@
     z-index: 2;
   }
 
+  .page_no-mobile-bar::after {
+    display: none;
+  }
+
   .gallery__new-card-btn,
   .gallery__practice-btn {
     position: fixed;
     bottom: 64px;
     height: 44px;
     aspect-ratio: auto;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border: none;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-
     z-index: 4;
   }
 
@@ -58,5 +59,9 @@
     right: 20px;
     bottom: 20px;
     z-index: 3;
+  }
+
+  .page_location_carousel .footer {
+    position: static;
   }
 }

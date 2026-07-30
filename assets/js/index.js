@@ -13,6 +13,7 @@ const notFoundSection = document.querySelector("#not-found");
 const carouselSection = document.querySelector("#carousel");
 const mainContentEl = document.querySelector(".page__main-content");
 const practiceBtn = document.querySelector(".gallery__practice-btn");
+const pageEl = document.querySelector(".page");
 
 function createDeckEl(item) {
   const deckEl = deckTemplateEl.content.cloneNode(true);
@@ -51,6 +52,8 @@ function renderView() {
   notFoundSection.style.display = "none";
 
   mainContentEl.classList.remove("page__main-content_location_carousel");
+  pageEl.classList.remove("page_no-mobile-bar");
+  pageEl.classList.remove("page_location_carousel");
 
   const hash = window.location.hash;
 
@@ -63,6 +66,7 @@ function renderView() {
 
     if (!deck) {
       notFoundSection.style.display = "flex";
+      pageEl.classList.add("page_no-mobile-bar");
       currentDeck = null;
       return;
     }
@@ -72,23 +76,27 @@ function renderView() {
     renderDeckView(deck);
   } else if (hash.startsWith("#carousel/")) {
     const deckID = hash.split("/")[1];
-
     const deck = getDeckByID(deckID);
 
     if (!deck) {
       notFoundSection.style.display = "flex";
+      pageEl.classList.add("page_no-mobile-bar");
       currentDeck = null;
       return;
     }
 
     currentDeck = deck;
     carouselSection.style.display = "flex";
+
     mainContentEl.classList.add("page__main-content_location_carousel");
+    pageEl.classList.add("page_no-mobile-bar");
+    pageEl.classList.add("page_location_carousel");
 
     renderCarouselView(deck);
   } else {
     currentDeck = null;
     notFoundSection.style.display = "flex";
+    pageEl.classList.add("page_no-mobile-bar");
   }
 }
 
