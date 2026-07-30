@@ -1,41 +1,29 @@
-\# Flashcard App
+# Flash Cards
 
+## Description
 
+Flash Cards is a web application for creating and studying flashcard decks. Users can browse decks, open a deck to view its cards, practice using a flashcard carousel, and manage their flashcards through an intuitive interface. The application is fully responsive and works well on desktop and mobile devices.
 
-My first project in TripleTen's AI-Assisted Software Engineering program. It includes decks of flashcards, each of which can be viewed in a carousel.
+## Features
 
+- Browse flashcard decks on the home page
+- Open a deck to view all of its cards
+- Create new flashcards
+- Delete flashcards
+- Practice cards in a carousel view
+- Flip cards to reveal answers
+- Confirmation modal before deleting cards
+- Responsive design for desktop and mobile devices
+- Custom card colors
+- Hash-based navigation between views
 
+## Technologies Used
 
-\## Features
+- HTML5
+- CSS3
+- JavaScript (ES Modules)
+- Git & GitHub
 
-
-
-\- View flashcard decks
-
-\- Navigate through cards using a carousel
-
-\- Flip cards to reveal answers
-
-\- Organize cards into different topics
-
-
-
-\## Technologies used
-
-
-
-\- HTML
-
-\- CSS
-
-\- JavaScript
-
-\- Git
-
-\- GitHub
-
-## Deployed Site
-
-Check out my flashcard app here:
+## Deployment
 
 https://kablesgaming-hue.github.io/ai-se_project_flashcards/
