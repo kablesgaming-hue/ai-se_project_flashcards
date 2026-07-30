@@ -24,6 +24,8 @@ Flash Cards is a web application for creating and studying flashcard decks. User
 - JavaScript (ES Modules)
 - Git & GitHub
 
+https://www.loom.com/share/60a972cc749240379c263a8ce04b1663
+
 ## Deployment
 
 https://kablesgaming-hue.github.io/ai-se_project_flashcards/
