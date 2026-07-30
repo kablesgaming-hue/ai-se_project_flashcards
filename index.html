@@ -35,7 +35,7 @@
       <section class="gallery" id="home">
         <h2 class="gallery__title">My Decks</h2>
         <div class="wrapping-row">
-          <ul class="gallery__list"></ul>
+          <ul class="gallery__list wrapping-row__display-contents"></ul>
 
           <button type="button" class="gallery__new-card-btn">
             + New Deck
@@ -63,20 +63,22 @@
       </template>
       <template id="card-template">
         <li class="card">
-          <h3 class="card__title"></h3>
+          <div class="card__content">
+            <h3 class="card__title"></h3>
 
-          <div class="card__row">
-            <button
-              type="button"
-              aria-label="Flip card"
-              class="card__flip-btn"
-            ></button>
+            <div class="card__row">
+              <button
+                type="button"
+                class="card__flip-btn"
+                aria-label="Flip card"
+              ></button>
 
-            <button
-              type="button"
-              aria-label="Delete card"
-              class="card__delete-btn"
-            ></button>
+              <button
+                type="button"
+                class="card__delete-btn"
+                aria-label="Delete card"
+              ></button>
+            </div>
           </div>
         </li>
       </template>

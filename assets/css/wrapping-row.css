@@ -1,6 +1,21 @@
 .wrapping-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  align-items: stretch;
+}
+
+.wrapping-row__display-contents {
+  display: contents;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapping-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapping-row {
+    grid-template-columns: 1fr;
+  }
 }

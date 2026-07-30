@@ -23,14 +23,18 @@ function renderDeckView(deck) {
 
     let showingQuestion = true;
 
-    flipBtn.textContent = "Show answer";
+    flipBtn.setAttribute("aria-label", "Show answer");
 
     flipBtn.addEventListener("click", () => {
       showingQuestion = !showingQuestion;
       titleEl.textContent = showingQuestion
         ? cardData.question
         : cardData.answer;
-      flipBtn.textContent = showingQuestion ? "Show answer" : "Show question";
+      flipBtn.setAttribute(
+        "aria-label",
+        showingQuestion ? "Show answer" : "Show question",
+      );
+      cardEl.classList.toggle("card_flipped", !showingQuestion);
     });
 
     deleteBtn.addEventListener("click", () => {

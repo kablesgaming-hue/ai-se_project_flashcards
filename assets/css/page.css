@@ -19,3 +19,25 @@
 .page__main-content_location_carousel {
   margin-top: 106px;
 }
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 20px 32px 32px;
+  }
+
+  .page__main-content {
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page {
+    padding: 20px;
+  }
+
+  .page__main-content {
+    margin-top: 48px;
+    margin-bottom: 80px;
+  }
+}

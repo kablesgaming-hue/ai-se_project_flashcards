@@ -1,6 +1,6 @@
 .card {
-  width: 325px;
-  height: 180px;
+  width: 100%;
+  aspect-ratio: 325 / 180;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
@@ -71,4 +71,30 @@
 
 .card__delete-btn:hover {
   opacity: 1;
+}
+
+.card_flipped {
+  background-color: #fff;
+}
+
+.card__flip-btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url("../images/flip.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.card__flip-btn:hover {
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
 }

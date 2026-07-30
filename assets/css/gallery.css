@@ -15,8 +15,8 @@
 }
 
 .gallery__new-card-btn {
-  width: 325px;
-  height: 180px;
+  width: 100%;
+  aspect-ratio: 325 / 180;
   border: none;
   border-radius: 20px;
   background-color: #d9d9d9;
@@ -29,4 +29,11 @@
 .gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
+}
+
+@media screen and (max-width: 600px) {
+  .gallery__title {
+    margin-bottom: 24px;
+    font-size: 32px;
+  }
 }
