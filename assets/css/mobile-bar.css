@@ -23,15 +23,23 @@
   .gallery__practice-btn {
     position: fixed;
     bottom: 64px;
+
     height: 44px;
     aspect-ratio: auto;
+    margin: 0;
+    padding: 0 16px;
+    box-sizing: border-box;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border: none;
     border-radius: 8px;
+
     font-size: 16px;
     font-weight: 700;
+
     cursor: pointer;
     z-index: 4;
   }
@@ -39,18 +47,25 @@
   .gallery__new-card-btn {
     left: 20px;
     right: 20px;
+
     width: auto;
+    max-width: 353px;
+    margin: 0 auto;
   }
 
   .gallery__practice-btn {
-    left: 20px;
-    width: 90px;
+    left: auto;
+    right: 20px;
+    width: calc(50% - 26px);
   }
 
   .gallery__new-card-btn_location_deck-view {
-    left: 130px;
-    right: 20px;
-    width: auto;
+    left: 20px;
+    right: auto;
+
+    width: calc(50% - 26px);
+    max-width: none;
+    margin: 0;
   }
 
   .footer {

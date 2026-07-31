@@ -15,15 +15,57 @@
 }
 
 .gallery__new-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   aspect-ratio: 325 / 180;
+  padding: 20px;
+  box-sizing: border-box;
+
   border: none;
   border-radius: 20px;
   background-color: #d9d9d9;
+
   font-size: 24px;
   font-weight: 700;
+  line-height: 1.2;
   color: rgba(26, 26, 26, 0.5);
+
   cursor: pointer;
+}
+
+.gallery__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery__practice-btn {
+  margin: 0 0 40px;
+  padding: 12px 16px 14px;
+
+  border: none;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.gallery__practice-btn:hover {
+  background:
+    linear-gradient(0deg, #1a1a1a, #1a1a1a),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 55.81%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
+  background-blend-mode: overlay;
 }
 
 .gallery__new-card-btn:hover {

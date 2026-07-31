@@ -128,17 +128,12 @@
 }
 
 @media screen and (max-width: 600px) {
-  .carousel {
-    width: 100%;
-  }
-
   .carousel__grid {
     width: 100%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "card card"
-      "left right"
-      "flip flip";
+      "card card card"
+      "left flip right";
     gap: 20px;
   }
 
@@ -152,15 +147,11 @@
     justify-self: start;
   }
 
-  .carousel__btn_type_right {
-    justify-self: end;
-  }
-
   .carousel__btn_type_flip {
     justify-self: center;
   }
 
-  .carousel__card-text {
-    font-size: 24px;
+  .carousel__btn_type_right {
+    justify-self: end;
   }
 }
