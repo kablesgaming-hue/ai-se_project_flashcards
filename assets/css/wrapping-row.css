@@ -1,6 +1,7 @@
 .wrapping-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(min(325px, 100%), 353px));
   gap: 20px;
 }
 
@@ -8,14 +9,8 @@
   display: contents;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 750px) {
   .wrapping-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .wrapping-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, 325px);
   }
 }
