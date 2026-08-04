@@ -65,6 +65,7 @@ function renderView() {
     currentDeck = null;
   } else if (hash === "#new-deck-view") {
     newDeckViewSection.style.display = "block";
+    pageEl.classList.add("page_no-mobile-bar");
     currentDeck = null;
   } else if (hash.startsWith("#deck/")) {
     const deckID = hash.split("/")[1];
