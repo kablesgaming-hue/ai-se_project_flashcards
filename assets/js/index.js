@@ -63,7 +63,7 @@ function renderView() {
   if (hash === "#home" || hash === "") {
     homeSection.style.display = "block";
     currentDeck = null;
-  } else if (hash === "#new-deck-view") {
+  } else if (hash === "#new-deck") {
     newDeckViewSection.style.display = "block";
     pageEl.classList.add("page_no-mobile-bar");
     currentDeck = null;
@@ -114,7 +114,7 @@ renderView();
 window.addEventListener("hashchange", renderView);
 
 newDeckBtn.addEventListener("click", () => {
-  window.location.hash = "#new-deck-view";
+  window.location.hash = "#new-deck";
 });
 
 practiceBtn.addEventListener("click", () => {
