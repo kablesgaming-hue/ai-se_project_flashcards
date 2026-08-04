@@ -6,13 +6,15 @@ import { renderDeckView } from "./deck-view.js";
 let currentDeck = null;
 
 const deckTemplateEl = document.querySelector("#deck-template");
-const deckListEl = document.querySelector(".gallery__list");
+const deckListEl = document.querySelector("#home .gallery__list");
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const notFoundSection = document.querySelector("#not-found");
 const carouselSection = document.querySelector("#carousel");
 const mainContentEl = document.querySelector(".page__main-content");
 const practiceBtn = document.querySelector(".gallery__practice-btn");
+const newDeckViewSection = document.querySelector("#new-deck-view");
+const newDeckBtn = document.querySelector("#home .gallery__new-card-btn");
 const pageEl = document.querySelector(".page");
 
 function createDeckEl(item) {
@@ -48,6 +50,7 @@ function renderDeckEl(item) {
 function renderView() {
   homeSection.style.display = "none";
   deckViewSection.style.display = "none";
+  newDeckViewSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
 
@@ -59,6 +62,9 @@ function renderView() {
 
   if (hash === "#home" || hash === "") {
     homeSection.style.display = "block";
+    currentDeck = null;
+  } else if (hash === "#new-deck-view") {
+    newDeckViewSection.style.display = "block";
     currentDeck = null;
   } else if (hash.startsWith("#deck/")) {
     const deckID = hash.split("/")[1];
@@ -105,6 +111,10 @@ decks.forEach(renderDeckEl);
 renderView();
 
 window.addEventListener("hashchange", renderView);
+
+newDeckBtn.addEventListener("click", () => {
+  window.location.hash = "#new-deck-view";
+});
 
 practiceBtn.addEventListener("click", () => {
   if (currentDeck) {
