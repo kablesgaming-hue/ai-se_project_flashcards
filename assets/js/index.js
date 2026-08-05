@@ -1,3 +1,4 @@
+import { disableSubmitBtn } from "./new-deck-view.js";
 import { decks, getDeckByID } from "./decks.js";
 import { hexToString } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
@@ -63,9 +64,12 @@ function renderView() {
   if (hash === "#home" || hash === "") {
     homeSection.style.display = "block";
     currentDeck = null;
-  } else if (hash === "#new-deck") {
+  } else if (hash === "#new-deck-view") {
     newDeckViewSection.style.display = "block";
     pageEl.classList.add("page_no-mobile-bar");
+
+    disableSubmitBtn();
+
     currentDeck = null;
   } else if (hash.startsWith("#deck/")) {
     const deckID = hash.split("/")[1];
@@ -114,7 +118,7 @@ renderView();
 window.addEventListener("hashchange", renderView);
 
 newDeckBtn.addEventListener("click", () => {
-  window.location.hash = "#new-deck";
+  window.location.hash = "#new-deck-view";
 });
 
 practiceBtn.addEventListener("click", () => {
