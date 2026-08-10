@@ -4,7 +4,12 @@ const deckViewSection = document.querySelector("#deck-view");
 const deckViewTitleEl = deckViewSection.querySelector(".gallery__title");
 const deckViewListEl = deckViewSection.querySelector(".gallery__list");
 const cardTemplateEl = document.querySelector("#card-template");
-
+/**
+ * Renders a deck and its cards in the deck view.
+ *
+ * @param {object} deck - The deck to render.
+ * @returns {void}
+ */
 function renderDeckView(deck) {
   deckViewTitleEl.textContent = deck.name;
   deckViewListEl.innerHTML = "";

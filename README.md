@@ -16,6 +16,11 @@ Flash Cards is a web application for creating and studying flashcard decks. User
 - Responsive design for desktop and mobile devices
 - Custom card colors
 - Hash-based navigation between views
+- Create new decks and save them remotely
+- Delete decks from the application and database
+- Display validation and API errors through an error modal
+- Fetch and manage deck data through a remote API
+- JSDoc documentation for all named JavaScript functions
 
 ## Technologies Used
 
@@ -23,11 +28,14 @@ Flash Cards is a web application for creating and studying flashcard decks. User
 - CSS3
 - JavaScript (ES Modules)
 - Git & GitHub
+- REST API
+- Fetch API
+- JSDoc
 
- ## Project Pitch Video
- 
- Check out https://drive.google.com/file/d/1WDHZd-DshqO-ezDQkfdZy0oRNbfaU0z9/view?usp=sharing , where I describe my 
- project and some challenges I faced while building it.
+## Project Pitch Video
+
+Check out https://drive.google.com/file/d/1WDHZd-DshqO-ezDQkfdZy0oRNbfaU0z9/view?usp=sharing , where I describe my
+project and some challenges I faced while building it.
 
 ## Deployment
 

@@ -9,11 +9,20 @@ const cardTextEl = carouselSection.querySelector(".carousel__card-text");
 const leftBtn = carouselSection.querySelector(".carousel__btn_type_left");
 const rightBtn = carouselSection.querySelector(".carousel__btn_type_right");
 const flipBtn = carouselSection.querySelector(".carousel__btn_type_flip");
-
+/**
+ * Renders a deck in the carousel view and sets up carousel controls.
+ *
+ * @param {object} deck - The deck to display.
+ * @returns {void}
+ */
 function renderCarouselView(deck) {
   let currentIndex = 0;
   let showingQuestion = true;
-
+  /**
+   * Updates the carousel to display the current card and navigation state.
+   *
+   * @returns {void}
+   */
   function updateDisplay() {
     const currentCard = deck.cards[currentIndex];
 

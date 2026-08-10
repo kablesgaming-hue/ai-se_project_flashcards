@@ -19,7 +19,12 @@ const practiceBtn = document.querySelector(".gallery__practice-btn");
 const newDeckViewSection = document.querySelector("#new-deck-view");
 const newDeckBtn = document.querySelector("#home .gallery__new-card-btn");
 const pageEl = document.querySelector(".page");
-
+/**
+ * Creates a deck element from deck data.
+ *
+ * @param {object} item - The deck data used to create the element.
+ * @returns {DocumentFragment} The cloned deck template.
+ */
 function createDeckEl(item) {
   const deckEl = deckTemplateEl.content.cloneNode(true);
 
@@ -59,11 +64,22 @@ function createDeckEl(item) {
 
   return deckEl;
 }
+/**
+ * Renders a deck element in the deck list.
+ *
+ * @param {object} item - The deck data to render.
+ * @returns {void}
+ */
 function renderDeckEl(item) {
   const deckEl = createDeckEl(item);
 
   deckListEl.prepend(deckEl);
 }
+/**
+ * Renders the appropriate view based on the current URL hash.
+ *
+ * @returns {void}
+ */
 function renderView() {
   aboutSection.style.display = "none";
   homeSection.style.display = "none";
