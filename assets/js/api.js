@@ -13,6 +13,18 @@ function processResponse(res) {
   return Promise.reject(`Error: ${res.status}`);
 }
 
+function addDeck({ name, color, cards }) {
+  return fetch(`${baseUrl}/decks`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      name,
+      color,
+      cards,
+    }),
+  }).then(processResponse);
+}
+
 function getDecks() {
   return fetch(`${baseUrl}/decks`, { headers }).then(processResponse);
 }
@@ -24,4 +36,4 @@ function deleteDeck(deckId) {
   }).then(processResponse);
 }
 
-export { getDecks, deleteDeck };
+export { getDecks, deleteDeck, addDeck };
