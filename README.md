@@ -34,7 +34,7 @@ Flash Cards is a web application for creating and studying flashcard decks. User
 
 ## Project Pitch Video
 
-Check out https://drive.google.com/file/d/1WDHZd-DshqO-ezDQkfdZy0oRNbfaU0z9/view?usp=sharing , where I describe my
+Check out https://drive.google.com/file/d/1D2P88aNO3xMAPnVDDoL_hvbdtuXAWi-s/view?usp=sharing , where I describe my
 project and some challenges I faced while building it.
 
 ## Deployment
