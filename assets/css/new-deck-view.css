@@ -179,3 +179,37 @@
     margin-top: 38px;
   }
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0 0 0 / 0.5);
+  z-index: 10;
+}
+
+.modal_visible {
+  display: flex;
+}
+
+.modal__content {
+  width: 300px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #ffa6a0;
+}
+
+.modal__title {
+  margin: 0 0 10px;
+}
+
+.modal__error {
+  margin: 0 0 10px;
+}
+
+.modal__close {
+  display: block;
+  margin-left: auto;
+}
