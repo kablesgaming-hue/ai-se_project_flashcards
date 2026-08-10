@@ -11,14 +11,6 @@ const errorModal = document.querySelector("#error-modal");
 const errorCloseBtn = errorModal.querySelector(".modal__close");
 const errorMessageEl = errorModal.querySelector(".modal__error");
 
-function slugify(str) {
-  return str
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
 function normalizeColor(color) {
   if (!color) {
     return "#64d583";
