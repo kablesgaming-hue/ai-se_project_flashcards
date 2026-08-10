@@ -114,4 +114,4 @@ errorCloseBtn.addEventListener("click", () => {
   closeModal(errorModal);
 });
 
-export { disableSubmitBtn };
+export { disableSubmitBtn, showError };

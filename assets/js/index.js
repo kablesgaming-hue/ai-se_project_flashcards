@@ -1,8 +1,9 @@
-import { disableSubmitBtn } from "./new-deck-view.js";
-import { decks, getDeckByID } from "./decks.js";
+import { getDeckByID } from "./decks.js";
 import { hexToString } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
+import { getDecks } from "./api.js";
+import { disableSubmitBtn, showError } from "./new-deck-view.js";
 
 let currentDeck = null;
 
@@ -111,9 +112,18 @@ function renderView() {
   }
 }
 
-decks.forEach(renderDeckEl);
-
-renderView();
+window.addEventListener("DOMContentLoaded", () => {
+  getDecks()
+    .then((decks) => {
+      decks.forEach(renderDeckEl);
+    })
+    .catch(() => {
+      showError("Can't fetch decks");
+    })
+    .finally(() => {
+      renderView();
+    });
+});
 
 window.addEventListener("hashchange", renderView);
 
