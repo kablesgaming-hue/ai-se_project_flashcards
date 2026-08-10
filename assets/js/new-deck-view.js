@@ -97,7 +97,7 @@ function handleNewDeckSubmit(e) {
   }
 
   const deck = {
-    id: `${slugify(jsonData.name)}-${Date.now()}`,
+    _id: `${slugify(jsonData.name)}-${Date.now()}`,
     color: colorValue,
     name: jsonData.name,
     cards: jsonData.cards,
@@ -105,7 +105,7 @@ function handleNewDeckSubmit(e) {
 
   decks.push(deck);
 
-  window.location.hash = `#deck/${deck.id}`;
+  window.location.hash = `#deck/${deck._id}`;
 }
 
 formEl.addEventListener("submit", handleNewDeckSubmit);
