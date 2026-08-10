@@ -7,6 +7,7 @@ import { disableSubmitBtn, showError } from "./new-deck-view.js";
 
 let currentDeck = null;
 
+const aboutSection = document.querySelector("#about");
 const deckTemplateEl = document.querySelector("#deck-template");
 const deckListEl = document.querySelector("#home .gallery__list");
 const homeSection = document.querySelector("#home");
@@ -64,6 +65,7 @@ function renderDeckEl(item) {
   deckListEl.prepend(deckEl);
 }
 function renderView() {
+  aboutSection.style.display = "none";
   homeSection.style.display = "none";
   deckViewSection.style.display = "none";
   newDeckViewSection.style.display = "none";
@@ -78,6 +80,9 @@ function renderView() {
 
   if (hash === "#home" || hash === "") {
     homeSection.style.display = "block";
+    currentDeck = null;
+  } else if (hash === "#about") {
+    aboutSection.style.display = "block";
     currentDeck = null;
   } else if (hash === "#new-deck-view") {
     newDeckViewSection.style.display = "block";
