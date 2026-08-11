@@ -97,6 +97,9 @@ function renderView() {
   if (hash === "#home" || hash === "") {
     homeSection.style.display = "block";
     currentDeck = null;
+
+    deckListEl.innerHTML = "";
+    fetchedDecks.forEach(renderDeckEl);
   } else if (hash === "#about") {
     aboutSection.style.display = "block";
     currentDeck = null;
@@ -151,7 +154,6 @@ window.addEventListener("DOMContentLoaded", () => {
   getDecks()
     .then((decks) => {
       fetchedDecks.push(...decks);
-      decks.forEach(renderDeckEl);
     })
     .catch(() => {
       showError("Can't fetch decks");
